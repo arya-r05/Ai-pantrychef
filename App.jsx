@@ -8,9 +8,9 @@ function App() {
   const askAI = async () => {
     if (!ingredients) return;
     setLoading(true);
-    setRecipe(""); // Clear the old recipe while loading
+    setRecipe(""); 
     try {
-      // This fetches data from your FastAPI (Python) backend
+      
       const response = await fetch(`http://127.0.0.1:8000/recipe?ingredients=${ingredients}`);
       const data = await response.json();
       setRecipe(data.recipe);
