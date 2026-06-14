@@ -11,7 +11,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Use your fine-grained token here
+
 client = InferenceClient(api_key="hf_Tokken_Here")
 
 @app.get("/")
@@ -21,7 +21,7 @@ def read_root():
 @app.get("/recipe")
 def get_recipe(ingredients: str):
     try:
-        # Qwen 2.5 is currently very stable on the free serverless tier
+        
         response = client.chat_completion(
             model="Qwen/Qwen2.5-7B-Instruct",
             messages=[{"role": "user", "content": f"Ingredients: {ingredients}. Give me 1 recipe name and 3 steps."}],
@@ -29,5 +29,5 @@ def get_recipe(ingredients: str):
         )
         return {"recipe": response.choices[0].message.content}
     except Exception as e:
-        # If this still fails, we will try a different model name
+        
         return {"recipe": f"Chef Error: {str(e)}"}
