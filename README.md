@@ -12,7 +12,7 @@ Tech Stack
 * **AI**: Hugging Face Inference API (Qwen 2.5 Model)
 
 Installation
-1. Clone the repo: `git clone https://github.com/YOUR_USERNAME/ai-pantrychef.git`
+1. Clone the repo: `git clone https://github.com/arya-r05/ai-pantrychef.git`
 2. Install Python dependencies: `pip install fastapi uvicorn huggingface_hub`
 3. Install Frontend dependencies: `cd frontend && npm install`
 4. Add your Hugging Face Token in `main.py`.
